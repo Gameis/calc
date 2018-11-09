@@ -118,6 +118,7 @@
     <ClCompile Include="arrangement.cpp" />
     <ClCompile Include="binom.cpp" />
     <ClCompile Include="DRV.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="pocas.cpp" />
   </ItemGroup>
