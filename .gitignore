@@ -1,9 +1,14 @@
-Debug
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
 
-.vs
-
-calculator/Debug
-calculator/x64
-
-x64
-/calculator/main.cpp
+# Visual Studio 2015 cache/options directory
+.vs/
