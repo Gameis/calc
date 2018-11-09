@@ -1,15 +1,6 @@
 #include "DRV.h"
 
 
-
-DRV::DRV()
-{
-}
-
-
-DRV::~DRV()
-{
-}
 unsigned DRV::compute(const vector<double> & answer) {
 	this->initialize_Data(answer);
 	if (this->check_P() == true && this->already_X() == false) {
@@ -51,14 +42,14 @@ bool DRV::check_P() {
 	}
 }
 void DRV::solution() {
-	this->answer.push_back(this->NY(1));
-	this->answer.push_back(this->NY(2)- pow(this->NY(1),2));
+	this->answers.push_back(this->NY(1));
+	this->answers.push_back(this->NY(2)- pow(this->NY(1),2));
 	this->SR = sqrt(this->NY(2) - pow(this->NY(1), 2));
-	this->answer.push_back(this->SR);
+	this->answers.push_back(this->SR);
 	this->MY3 = this->NY(3) - 3 * this->NY(1)*this->NY(2) + 2 * pow(this->NY(1), 3);
 	this->MY4 = this->NY(4) - 4 * this->NY(1)*this->NY(3) + 6 * pow(this->NY(1), 2)*this->NY(2) - 3 * pow(this->NY(1), 4);
-	this->answer.push_back(this->MY3 / (pow(this->SR, 3)));
-	this->answer.push_back((this->MY4 / (pow(this->SR, 4))) - 3);
+	this->answers.push_back(this->MY3 / (pow(this->SR, 3)));
+	this->answers.push_back((this->MY4 / (pow(this->SR, 4))) - 3);
 }
 double DRV::NY(int i) {
 	double temp = 0;

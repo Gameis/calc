@@ -18,13 +18,13 @@
     <ClCompile Include="DRV.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="arrangement.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
     <ClCompile Include="binom.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="menu.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="arrangement.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="pocas.cpp">
@@ -33,9 +33,15 @@
     <ClCompile Include="main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="stub.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DRV.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="arrangement.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Bernully.h">
@@ -47,13 +53,16 @@
     <ClInclude Include="menu.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="pocas.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
     <ClInclude Include="Puasson.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="arrangement.h">
+    <ClInclude Include="func.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="pocas.h">
+    <ClInclude Include="stub.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

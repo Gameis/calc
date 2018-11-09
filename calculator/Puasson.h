@@ -2,10 +2,11 @@
 
 #include "iostream"
 #include "math.h"
+#include "func.h"
 #include "vector"
 using namespace std;
 
-class Puasson
+class Puasson : public func
 {
 private:
 	int n, m;
@@ -25,7 +26,7 @@ public:
 	{
 		return v;
 	}
-	unsigned compute(vector<double> vect)
+	unsigned compute(const vector<double> & vect)
 	{
 		try
 		{

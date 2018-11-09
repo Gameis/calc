@@ -10,8 +10,8 @@ vector<double> binom::answer() {
 	return data;
 }
 
-unsigned binom::computer(const vector<double> & v) {
-	double m, D, dev, A, E;
+unsigned binom::compute(const vector<double> & v) {
+	/*double m, D, dev, A, E;
 	int n = v[0];
 	double p = v[1], q = v[2];
 	if (p + q == 1 && (A >= -2 && A <= 2) && (E >= -2 && E <= 2))
@@ -42,7 +42,8 @@ unsigned binom::computer(const vector<double> & v) {
 	data.push_back(dev);
 	data.push_back(A);
 	data.push_back(E);
-	
+	*/
+	return 0;//Которого тут вообще не было...
 	
 }
 

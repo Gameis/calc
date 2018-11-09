@@ -1,16 +1,17 @@
 #pragma once
 
 #include "vector"
+#include "func.h"
 
 using namespace std;
 
-class binom
+class binom: public func
 {
 private:
 	vector<double>data;
 public:
 	vector<double> answer();
-	unsigned computer(const vector<double> & v);
+	unsigned compute(const vector<double> & v);
 	binom();
 	~binom();
 };

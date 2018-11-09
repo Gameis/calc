@@ -1,10 +1,11 @@
 #pragma once
 #include "vector"
 #include "iostream"
+#include "func.h"
 
 using namespace std;
 
-class arrangement
+class arrangement: public func
 {
 private:
 	vector<double> v;

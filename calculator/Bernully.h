@@ -1,11 +1,12 @@
 #pragma once
 
-#include <iostream>
+#include "iostream"
 #include "math.h"
+#include "func.h"
 #include "vector"
 using namespace std;
 
-class Bernully
+class Bernully: public func
 {
 private:
 	int n, m;
