@@ -1,10 +1,11 @@
 #pragma once
 #include "vector"
 #include "iostream"
+#include "func.h"
 
 using namespace std;
 
-class combination
+class combination : public func
 {
 private:
 	vector<double> v;
@@ -12,5 +13,5 @@ private:
 	double factorial(double n);
 public:
 	vector <double> answer();
-	unsigned compute(vector<double> data);//возвращает 1, если n < 0 
+	unsigned compute(const vector<double>& data);//возвращает 1, если n < 0 
 };

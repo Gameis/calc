@@ -14,7 +14,7 @@ vector<double> combination::answer()
 	return v;
 }
 
-unsigned combination::compute(vector<double> data)
+unsigned combination::compute(const vector<double>& data)
 {
 	if (data[0] < 0) return 1;
 	if (data[0] < 0) return 2;
