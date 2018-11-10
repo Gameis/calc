@@ -1,8 +1,9 @@
 #pragma once
 #include "vector"
 #include "math.h"
+#include "func.h"
 using namespace std;
-class poisson
+class poisson : public func
 {
 private:
 	vector<double> answers;
@@ -15,7 +16,7 @@ private:
 		answers.push_back(1. / (v[0] * v[1]));
 	}
 public:
-	unsigned compute(vector<double> v)
+	unsigned compute(const vector<double> &v)
 	{
 		if (v[0] < 100)    //v[0]-n v[1]-p
 			return 11;     //если число испытаний мало для вычисления по формуле Пуассона

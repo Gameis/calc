@@ -12,7 +12,5 @@ private:
 public:
 	vector<double> answer();
 	unsigned compute(const vector<double> & v);
-	binom();
-	~binom();
 };
 

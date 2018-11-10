@@ -9,12 +9,12 @@ double accommodation::factorial(double n)
 	}
 
 
-vector<double> accommodation::ansver()
+vector<double> accommodation::answer()
 {
 	return v;
 }
 
-unsigned accommodation::compute(vector<double> data)
+unsigned accommodation::compute(const vector<double>& data)
 {
 	if (data[0] < 0) return 1;
 	if (data[1] < 0) return 2;
