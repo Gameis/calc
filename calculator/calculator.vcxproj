@@ -115,6 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="accommodation.cpp" />
     <ClCompile Include="arrangement.cpp" />
     <ClCompile Include="binom.cpp" />
     <ClCompile Include="combination.cpp" />
@@ -125,6 +126,7 @@
     <ClCompile Include="stub.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="accommodation.h" />
     <ClInclude Include="arrangement.h" />
     <ClInclude Include="Bernully.h" />
     <ClInclude Include="binom.h" />
@@ -133,6 +135,7 @@
     <ClInclude Include="func.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="pocas.h" />
+    <ClInclude Include="Poisson.h" />
     <ClInclude Include="Puasson.h" />
     <ClInclude Include="stub.h" />
   </ItemGroup>
