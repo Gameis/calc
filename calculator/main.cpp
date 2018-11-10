@@ -32,11 +32,12 @@ int main()
 			unsigned complete_code = functional.at(function_number)->compute(var);
 			if (0 <= complete_code < 11)
 			{
-				//TODO : Вызов вывода ответа
+				auto answer = functional.at(function_number)->answer();
+				_menu.answer_output(answer,++function_number);
 			}
 			if (0 < complete_code)
 			{
-				//TODO: Вызов вывода ошибки
+				//_menu.error_handler(complete_code);
 			}
 		}
 	}
