@@ -118,8 +118,11 @@
     <ClCompile Include="accommodation.cpp" />
     <ClCompile Include="arrangement.cpp" />
     <ClCompile Include="binom.cpp" />
+    <ClCompile Include="Calculator.cpp" />
     <ClCompile Include="combination.cpp" />
     <ClCompile Include="DRV.cpp" />
+    <ClCompile Include="FunctionParser.cpp" />
+    <ClCompile Include="Integral.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="pocas.cpp" />
@@ -131,9 +134,12 @@
     <ClInclude Include="arrangement.h" />
     <ClInclude Include="Bernully.h" />
     <ClInclude Include="binom.h" />
+    <ClInclude Include="Calculator.h" />
     <ClInclude Include="combination.h" />
     <ClInclude Include="DRV.h" />
     <ClInclude Include="func.h" />
+    <ClInclude Include="FunctionParser.h" />
+    <ClInclude Include="Integral.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="pocas.h" />
     <ClInclude Include="Poisson.h" />
