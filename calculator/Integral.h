@@ -3,17 +3,21 @@
 #include <string>
 #include "Calculator.h"
 #include <functional>
+#include "FunctionParser.h"
+#include "func.h"
 using namespace std;
-class Integral
+class Integral : public func
 {
 private:
 	vector<double> _answer;
 	vector<string> _function;
 	double getValueByX(double x);
 	Calculator _calc;
+	function<string()> getExpression;
+	FunctionParser _parser;
 public:
-	Integral(const vector<string> & functions, const vector<function<double(double)>> & funcsValue);
-	unsigned compute(const vector<double> & data, const vector<string> & function);
+	Integral(function<string()> callBack);
+	unsigned compute(const vector<double> & data);
 	vector<double> answer();
 };
 

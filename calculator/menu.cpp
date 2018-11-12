@@ -163,7 +163,7 @@ void input_data(int var, vector<double>& data) {
 	//case 11:
 	//case 12:
 	case 13: cout << "a: "; data.push_back(input()); cout << "Ъ: "; data.push_back(input()); break;
-	//case 14:
+	case 14: cout << "Начало интервала: "; data.push_back(input()); cout << "Конец интервала: "; data.push_back(input());  cout << "Точность: "; data.push_back(input()); cout << "Эпсилон: "; data.push_back(input());
 	}
 }
 
@@ -206,6 +206,13 @@ void menu::error_handler(int value)
 	else {
 		cout << errors[value] << endl;
 	}
+}
+
+string menu::getFunction()
+{
+	string str;
+	getline(cin, str);
+	return string();
 }
 
 void menu::answer_output(vector<double> ansver, int value)
