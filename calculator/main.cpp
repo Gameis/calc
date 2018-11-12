@@ -11,6 +11,7 @@
 #include "combination.h"
 #include "Poisson.h"
 #include "accommodation.h"
+#include "RV.h"
 
 using namespace std;
 
@@ -19,7 +20,7 @@ int main()
 {
 	try
 	{
-		vector<func*> functional = vector<func*>({ new combination() , new accommodation(), new arrangement(), new Bernully(), new Puasson(), new DRV(), new binom(), new poisson(), new stub(), new stub(), new pokaz_ras(), new stub(), new stub(), new stub() });
+		vector<func*> functional = vector<func*>({ new combination() , new accommodation(), new arrangement(), new Bernully(), new Puasson(), new DRV(), new binom(), new poisson(), new stub(), new RV(), new pokaz_ras(), new stub(), new stub(), new stub() });
 		menu _menu;
 		while (true)
 		{
