@@ -1,60 +1,60 @@
 #include "DRV.h"
 
-
 unsigned DRV::compute(const vector<double> & answer) {
-	this->initialize_Data(answer);
-	if (this->check_P() == true && this->already_X() == false) {
-		if (answer.size() < 5) return 11; // Кол-во X-ов должно быть > "2"
-		this->solution();
+	this->initializeData(answer);
+	if (this->isHappen() == true && this->isAlreadyX() == false) {
+		if (answer.size() < 4) return 11; // Кол-во X-ов должно быть >= "2"
+		this->computeNumericalCharacteristics();
 		return 0;
 	}
 	else {
-		if (answer.size() < 5) return 11; // Кол-во X-ов должно быть > "2"
-		if (this->check_P() != true) return 1; // В распределение ДСВ присутствуют одинаковые Х-ы
-		if (this->already_X() != false) return 10; // Вероятность < или > "1"
+		if (this->isHappen() != true) return 13; // Вероятность < или > "1", должна быть = "1"
+		else if (this->isAlreadyX() != false) return 10; // В распределение ДСВ присутствуют одинаковые Х-ы
+		else if (answer.size() < 4) return 11; // Кол-во X-ов должно быть >= "2"
 	}
 }
-void DRV::initialize_Data(vector<double> answer) {
-	int i = 1;
-	while (i < answer.size()) {
-		this->x.push_back(answer[i]);
-		drv.insert(pair<double, double>(answer[i], answer[i+1]));
-		i += 2;
+void DRV::initializeData(vector<double> answer) {
+	int _i = 0;
+	while (_i < answer.size()) {
+		this->_x.push_back(answer[_i]);
+		_drv.insert(pair<double, double>(answer[_i], answer[_i + 1]));
+		_i += 2;
 	}
 }
-bool DRV::already_X() {
-	for (int i = 0; i < this->x.size();i++) {
-		for (int it = i+1; it < this->x.size(); it++) {
-			if (this->x[i] == this->x[it]) return true;
+bool DRV::isAlreadyX() {
+	for (int _i = 0; _i < this->_x.size(); _i++) {
+		for (int _it = _i + 1; _it < this->_x.size(); _it++) {
+			if (this->_x[_i] == this->_x[_it]) return true;
 		}
 	}
 	return false;
 }
-bool DRV::check_P() {
-	for (auto it = drv.begin(); it != drv.end(); ++it) {
-		sum += (*it).second;
+bool DRV::isHappen() {
+	for (auto _it = _drv.begin(); _it != _drv.end(); ++_it) {
+		_sum += (*_it).second;
 	}
-	if (this->sum == 1) { 
-		return true; 
+	if (this->_sum == 1) {
+		return true;
 	}
 	else {
 		return false;
 	}
 }
-void DRV::solution() {
-	this->answers.push_back(this->NY(1));
-	this->answers.push_back(this->NY(2)- pow(this->NY(1),2));
-	this->SR = sqrt(this->NY(2) - pow(this->NY(1), 2));
-	this->answers.push_back(this->SR);
-	this->MY3 = this->NY(3) - 3 * this->NY(1)*this->NY(2) + 2 * pow(this->NY(1), 3);
-	this->MY4 = this->NY(4) - 4 * this->NY(1)*this->NY(3) + 6 * pow(this->NY(1), 2)*this->NY(2) - 3 * pow(this->NY(1), 4);
-	this->answers.push_back(this->MY3 / (pow(this->SR, 3)));
-	this->answers.push_back((this->MY4 / (pow(this->SR, 4))) - 3);
+void DRV::computeNumericalCharacteristics() {
+	this->_answers.clear();
+	this->_answers.push_back(this->computeNY(1));
+	this->_answers.push_back(this->computeNY(2) - pow(this->computeNY(1), 2));
+	this->_theAvarageSquare = sqrt(this->computeNY(2) - pow(this->computeNY(1), 2));
+	this->_answers.push_back(this->_theAvarageSquare);
+	this->_my3 = this->computeNY(3) - 3 * this->computeNY(1)*this->computeNY(2) + 2 * pow(this->computeNY(1), 3);
+	this->_my4 = this->computeNY(4) - 4 * this->computeNY(1)*this->computeNY(3) + 6 * pow(this->computeNY(1), 2)*this->computeNY(2) - 3 * pow(this->computeNY(1), 4);
+	this->_answers.push_back(this->_my3 / (pow(this->_theAvarageSquare, 3)));
+	this->_answers.push_back((this->_my4 / (pow(this->_theAvarageSquare, 4))) - 3);
 }
-double DRV::NY(int i) {
-	double temp = 0;
-	for (auto it = drv.begin(); it != drv.end(); ++it) {
-		temp += pow((*it).first, i)*(*it).second;
+double DRV::computeNY(int _i) {
+	double _temp = 0;
+	for (auto _it = _drv.begin(); _it != _drv.end(); ++_it) {
+		_temp += pow((*_it).first, _i)*(*_it).second;
 	}
-	return temp;
+	return _temp;
 }
