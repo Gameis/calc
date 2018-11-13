@@ -1,33 +1,34 @@
 #pragma once
 
-#include "iostream"
+#include <iostream>
 #include "math.h"
 #include "func.h"
-#include "vector"
+#include <vector>
 using namespace std;
 
 class Bernully: public func
 {
 private:
-	int n, m;
-	double p,q;
-	vector<double> v;
-	long long fact(int N)
+	int _n, _m;
+	double _p, _q;
+	vector<double> _result;
+	long long computeFactorial(int N)
 	{
 		if (N < 0) // если пользователь ввел отрицательное число
 			return 0; // возвращаем ноль
 		if (N == 0) // если пользователь ввел ноль,
 			return 1; // возвращаем факториал от нуля - не удивляетесь, но это 1 =)
 		else // Во всех остальных случаях
-			return N * fact(N - 1); // делаем рекурсию.
+			return N * computeFactorial(N - 1); // делаем рекурсию.
 	}
 public:
 	vector<double> answer()
 	{
-		return v;
+		return _result;
 	}
 	unsigned compute(const vector<double> & vect)
 	{
+		_result.clear();
 		try
 		{
 			vect.at(0);
@@ -38,16 +39,16 @@ public:
 		{
 			return 10; //недостаточно аргументов 
 		}
-		n = vect[0];
-		if (n > 15 || n<=0)
+		_n = vect[0];
+		if (_n > 15 || _n<=0)
 			return 11; //n не может быть больше 15 и меньше или равным 0
-		m = vect[1];
-		if (m > n || m < 0)
+		_m = vect[1];
+		if (_m > _n || _m < 0)
 			return 12; //m не может быть больше n И меньше 0
-		p = vect[2];
-		if (p > 1 || p < 0) return 13; //p не может быть больше 1 и меньше 0
-		q = 1 - p;
-		v.push_back(fact(n) / (fact(m)*fact(n - m))*pow(p, m)*pow(q, n - m));
+		_p = vect[2];
+		if (_p > 1 || _p < 0) return 13; //p не может быть больше 1 и меньше 0
+		_q = 1 - _p;
+		_result.push_back(computeFactorial(_n) / (computeFactorial(_m)*computeFactorial(_n - _m))*pow(_p, _m)*pow(_q, _n - _m));
 		return 0;
 	}
 };

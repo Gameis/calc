@@ -90,7 +90,7 @@ string menu::getFunction()
 	string str;
 	cout << "¬ведите функцию: ";
 	getline(cin, str);
-	return string();
+	return str;
 }
 
 void menu::answer_output(vector<double> ansver, int value)
