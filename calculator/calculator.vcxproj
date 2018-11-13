@@ -126,6 +126,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="IndicataseDistribution.cpp" />
+    <ClCompile Include="NormalDistribution.cpp" />
     <ClCompile Include="RV.cpp" />
     <ClCompile Include="StringTokenizer.cpp" />
     <ClCompile Include="stub.cpp" />
@@ -143,6 +144,7 @@
     <ClInclude Include="Integral.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="IndicataseDistribution.h" />
+    <ClInclude Include="NormalDistribution.h" />
     <ClInclude Include="Poisson.h" />
     <ClInclude Include="Puasson.h" />
     <ClInclude Include="RV.h" />
