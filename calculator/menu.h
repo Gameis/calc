@@ -9,7 +9,7 @@ class menu
 {
 private:
 	vector<double> data;
-	map<int, string> errors;
+	vector<string> errors;
 public:
 	vector<double> start();
 	
