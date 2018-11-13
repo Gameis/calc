@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <iostream>
+#include <map>
 
 using namespace std;
 
@@ -8,7 +9,7 @@ class menu
 {
 private:
 	vector<double> data;
-	vector<string> errors;
+	map<int, string> errors;
 public:
 	vector<double> start();
 	
