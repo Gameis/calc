@@ -212,7 +212,7 @@ string menu::getFunction()
 {
 	string str;
 	getline(cin, str);
-	return string();
+	return str;
 }
 
 void menu::answer_output(vector<double> ansver, int value)

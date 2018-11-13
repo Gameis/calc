@@ -1,4 +1,5 @@
 #pragma once
+#define PI 3.1415926
 #include <vector>
 #include <string>
 #include "Calculator.h"
@@ -12,11 +13,12 @@ private:
 	vector<double> _answer;
 	vector<string> _function;
 	double getValueByX(double x);
-	Calculator _calc;
+	Calculator * _calc;
 	function<string()> getExpression;
-	FunctionParser _parser;
+	FunctionParser  * _parser;
 public:
 	Integral(function<string()> callBack);
+	~Integral();
 	unsigned compute(const vector<double> & data);
 	vector<double> answer();
 };
