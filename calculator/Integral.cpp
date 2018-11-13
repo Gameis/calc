@@ -8,17 +8,21 @@ double Integral::getValueByX(double x)
 }
 
 
-Integral::Integral(const vector<string> & functions, const vector<function<double(double)>> & funcsValue)
+Integral::Integral(function<string()> callBack) : func()
 {
-	_calc = Calculator(functions);
-	_calc.setFunctions(funcsValue);
+	getExpression = callBack;
+	_calc = Calculator(vector<string> {"cos", "sin", "tan", "atan", "acos", "asin", "cbrt", "sqrt"});
+	_calc.setFunctions(vector<function<double(double)>>{}); 
+	_parser = FunctionParser{ vector<string> {"cos", "sin", "tan", "atan", "acos", "asin", "cbrt", "sqrt"} };
 }
 
 
-unsigned Integral::compute(const vector<double> & data, const vector<string> & function)
+unsigned Integral::compute(const vector<double> & data)
 {
-	if (data.size() < 4 || function.empty() ) return 11;
-	_function = function;
+	_parser.setExpression(getExpression());
+	if (!_parser.parseExpression()) return 11;
+	if (data.size() < 4 ) return 11;
+	_function = _parser.getParsedExpression();
 
 	double e = data[3], n = data[2], a = data[0], b = data[1], a1, s, s1, g;
 

@@ -4,7 +4,7 @@
 #include "Bernully.h"
 #include "binom.h"
 #include "DRV.h"
-#include "pocas.h"
+#include "IndicataseDistribution.h"
 #include "Puasson.h"
 #include "func.h"
 #include "stub.h"
@@ -12,6 +12,8 @@
 #include "Poisson.h"
 #include "accommodation.h"
 #include "RV.h"
+#include "FunctionParser.h"
+#include "Integral.h"
 
 using namespace std;
 
@@ -20,34 +22,34 @@ int main()
 {
 	try
 	{
-		vector<func*> functional = vector<func*>({ new combination() , new accommodation(), new arrangement(), new Bernully(), new Puasson(), new DRV(), new binom(), new poisson(), new stub(), new RV(), new pokaz_ras(), new stub(), new stub(), new stub() });
-		menu _menu;
+		menu currentMenu;
+		vector<func*> functions = vector<func*>({ new combination() , new accommodation(), new arrangement(), new Bernully(), new Puasson(), new DRV(), new binom(), new poisson(), new stub(), new CRV(), new IndicataseDistribution(), new stub(), new stub(), new Integral([&currentMenu]() {return currentMenu.getFunction(); }) });
+
 		while (true)
 		{
-			_menu.begin();
-			auto var = _menu.result();
-			unsigned function_number = var.at(0);
+			currentMenu.begin();
+			auto vectorOfParameters = currentMenu.result();
+			unsigned function_number = vectorOfParameters.at(0);
 			if (function_number == 0) break;
 			else
 			{
 				--function_number;
 			}
-			var = vector<double>(++var.begin(), var.end());
-			unsigned complete_code = functional.at(function_number)->compute(var);
-			if (0 <= complete_code < 11)
+			vectorOfParameters = vector<double>(++vectorOfParameters.begin(), vectorOfParameters.end());
+			unsigned executionCode = functions.at(function_number)->compute(vectorOfParameters);
+			if (0 <= executionCode < 11)
 			{
-				auto answer = functional.at(function_number)->answer();
-				_menu.answer_output(answer,++function_number);
+				auto answer = functions.at(function_number)->answer();
+				currentMenu.answer_output(answer,++function_number);
 			}
-			if (0 < complete_code)
+			if (0 < executionCode)
 			{
-				//_menu.error_handler(complete_code);
+				//_menu.error_handler(executionCode);
 			}
 		}
 	}
-	catch (const std::exception& _exception)
+	catch (...)
 	{
-		;
 	}
 	return 0;
 }

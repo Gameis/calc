@@ -1,14 +1,13 @@
-#include "pocas.h"
-#include <iostream>
+#include "IndicataseDistribution.h"
 using namespace std;
 
-vector<double> pokaz_ras::answer()
+vector<double> IndicataseDistribution::answer()
 {
 	return _answer;
 }
 
 
-unsigned pokaz_ras::compute(const vector<double> & v)
+unsigned IndicataseDistribution::compute(const vector<double> & v)
 {
 	double x = v.at(0), l = v.at(1);
 	double da, e, d,b, al, A = 2, E = 6;
@@ -19,10 +18,6 @@ unsigned pokaz_ras::compute(const vector<double> & v)
 	
 	d = 1 / pow(l, 2);//дисперсия
 	b = 1 / l;//нахождение поварешки
-	cout << d << endl;
-	cout << b << endl;
-	cout << A << endl;
-	cout << E << endl;
 	
 	system("pause");
 	_answer.push_back(d);

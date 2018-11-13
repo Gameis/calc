@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <iostream>
+#include <map>
 
 using namespace std;
 
@@ -24,6 +25,8 @@ public:
 	void error_handler(int value); 
 	//Обрабатывает ошибку; 
 	//value - код ошибки
+
+	string getFunction();
 
 
 	/////////////////////////////////////////
