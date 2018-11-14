@@ -70,10 +70,15 @@ vector<double> menu::start() {
 	input_data(var, data);
 	return data;
 }
-
-void menu::error_handler(int value)
+menu::menu()
 {
-	cout <<"\nERROR " << value << endl;
+	typedef pair <unsigned, string> errorPair;
+	errors =  map<unsigned, string>({ errorPair(1,"n=0"), errorPair(2,"Число испытаний мало для формулы Пуассона"), errorPair(3,"Вероятность велика для Пуассона") , errorPair(4,"Число должно быть целое"), errorPair(5, "Число событий слишком велико"), errorPair(11,"Нехватка аргументов"), errorPair(12, "Число должно быть больше 0"), errorPair(13, "Сумма вероятностей не равна 1"), errorPair(14, "m>n")});
+}
+
+void menu::error_handler(unsigned value)
+{
+	cout <<"\nERROR: " << errors.at(value) << endl;
 }
 
 string menu::getFunction()
