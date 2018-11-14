@@ -3,26 +3,45 @@
 
 double Integral::getValueByX(double x)
 {
-	_calc.setXVal(x);
-	return _calc.calculate(_function);
+	_calc->setXVal(x);
+	return _calc->calculate(_function);
 }
 
 
 Integral::Integral(function<string()> callBack) : Func()
 {
 	getExpression = callBack;
-	_calc = Calculator(vector<string> {"cos", "sin", "tan", "atan", "acos", "asin", "cbrt", "sqrt"});
-	_calc.setFunctions(vector<function<double(double)>>{}); 
-	_parser = FunctionParser{ vector<string> {"cos", "sin", "tan", "atan", "acos", "asin", "cbrt", "sqrt"} };
+	_calc = new Calculator{ vector<string> {"sin", "cos", "tan", "ctan", "asin", "acos", "atan", "actan", "sqrt", "cbrt", "abs"} };
+	_calc->setFunctions(vector<function<double(double)>>{
+		[](const double x) {return sin(x); },
+		[](const double x) {return cos(x); },
+		[](const double x) {return tan(x); },
+		[](const double x) {return 1 / tan(x); },
+		[](const double x) {return asin(x); },
+		[](const double x) {return acos(x); },
+		[](const double x) {return atan(x); },
+		[](const double x) {return PI / 2 - atan(x); },
+		[](const double x) {return sqrt(x); },
+		[](const double x) {return cbrt(x); },
+		[](const double x) {return fabs(x); } 
+	});
+	_parser = new FunctionParser{ vector<string> {"sin","cos","tan","ctan", "asin", "acos","atan","actan", "sqrt", "cbrt", "abs"} };
+}
+
+
+Integral::~Integral()
+{
+	delete _parser;
+	_parser = nullptr;
 }
 
 
 unsigned Integral::compute(const vector<double> & data)
 {
-	_parser.setExpression(getExpression());
-	if (!_parser.parseExpression()) return 11;
+	_parser->setExpression(getExpression());
+	if (!_parser->parseExpression()) return 11;
 	if (data.size() < 4 ) return 11;
-	_function = _parser.getParsedExpression();
+	_function = _parser->getParsedExpression();
 
 	double e = data[3], n = data[2], a = data[0], b = data[1], a1, s, s1, g;
 
