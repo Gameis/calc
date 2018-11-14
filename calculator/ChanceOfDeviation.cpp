@@ -4,7 +4,7 @@
 
 ChanceOfDeviation::ChanceOfDeviation()
 {
-	_integral = new Integral([]() {return "2,7182818284^(-x^2/2)"; });
+	_integral = new Integral([]() {return "2.7182818284^(-x^2/2)"; });
 
 }
 
@@ -22,4 +22,5 @@ unsigned ChanceOfDeviation::compute(const vector<double>& data)
 	double phi = (1 / sqrt(2 * 3.1415926535))* _integral->answer().at(0);
 	_answer.clear();
 	_answer.push_back(2*phi);
+	return 0;
 }
