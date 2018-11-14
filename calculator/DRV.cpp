@@ -31,7 +31,7 @@ bool DRV::isAlreadyX() {
 }
 bool DRV::isHappen() {
 	for (auto it = _drv.begin(); it != _drv.end(); ++it) {
-		_sum += (*it).second;
+		this->_sum += (*it).second;
 	}
 	if (this->_sum == 1) {
 		return true;
