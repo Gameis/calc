@@ -119,6 +119,7 @@
     <ClCompile Include="arrangement.cpp" />
     <ClCompile Include="binom.cpp" />
     <ClCompile Include="Calculator.cpp" />
+    <ClCompile Include="ChanceOfDeviation.cpp" />
     <ClCompile Include="combination.cpp" />
     <ClCompile Include="DRV.cpp" />
     <ClCompile Include="FunctionParser.cpp" />
@@ -137,6 +138,7 @@
     <ClInclude Include="Bernully.h" />
     <ClInclude Include="binom.h" />
     <ClInclude Include="Calculator.h" />
+    <ClInclude Include="ChanceOfDeviation.h" />
     <ClInclude Include="combination.h" />
     <ClInclude Include="DRV.h" />
     <ClInclude Include="func.h" />
