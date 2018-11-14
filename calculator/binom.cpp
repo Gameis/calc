@@ -13,7 +13,7 @@ unsigned Binom::compute(const vector<double> & v) {
 	if (p + q == 1)
 		return 0;
 	else if (p + q != 1)
-		return 16; //сумма вероятностей не равна 1
+		return 13; //сумма вероятностей не равна 1
 	else if (n == 0)
 		return 1; //n равно 0
 	else if (n > 15)
@@ -21,7 +21,7 @@ unsigned Binom::compute(const vector<double> & v) {
 	else if (p <= 0 || p >= 1 || q <= 0 || q >= 1)
 		return 10; // одна из вероятностей меньше/равна 0 или больше/равна 1
 	else if (n < 0)
-		return 15; //число событий меньше 0
+		return 12; //число событий должно быть больше 0
 	try
 	{
 		v.at(0);
@@ -32,16 +32,16 @@ unsigned Binom::compute(const vector<double> & v) {
 	{
 		return 11;//недостаточно аргументов
 	}
-	m = n * p;
-	D = n * p*q;
+	m = n*p;
+	D = n*p*q;
 	dev = sqrt(D);
 	A = (q - p) / sqrt(n*p*q);
-	E = (1 - 6 * p*q) / n * p*q;
+	E = (1 - 6 * p*q) / n*p*q;
 	vector<double> _data = vector<double>{ m,D,dev,A,E };
-
-
+	
+	
 	return 0;//Которого тут вообще не было...
-
+	
 }
 
 

@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class Binom : public func
+class Binom : public Func
 {
 private:
 	vector<double> _data;

@@ -2,7 +2,9 @@
 #include "vector"
 #include "iostream"
 #include "func.h"
+
 using namespace std;
+
 class accommodation : public Func
 {
 private:

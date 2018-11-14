@@ -1,7 +1,5 @@
-#include <vector>
 #include "NormalDistribution.h"
-#include <iostream>
-using namespace std;
+
 
 vector<double> NormalDistribution::answer()
 	{
@@ -18,6 +16,7 @@ unsigned NormalDistribution::compute(const vector<double> & v)
 	}
 	M = a;
 	D = sigma * sigma;
+	_answer.clear();
 	_answer.push_back(M);
 	_answer.push_back(sigma);
 	_answer.push_back(D);

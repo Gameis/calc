@@ -1,7 +1,9 @@
 #pragma once
 #include <vector>
 #include "func.h"
+
 using namespace std;
+
 class IndicataseDistribution : public Func
 {
 private:

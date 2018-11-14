@@ -50,7 +50,6 @@ void input_data(int var, vector<double>& data) {
 }
 
 vector<double> menu::start() {
-	string cursor[15] = { "" };
 	SetConsoleCP(1251); 
 	SetConsoleOutputCP(1251);
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -59,12 +58,12 @@ vector<double> menu::start() {
 	SetConsoleTextAttribute(hConsole, (WORD)((15 << 4) | 1));
 	cout << "\t\t\tМеню\n";
 	SetConsoleTextAttribute(hConsole, (WORD)((15 << 4) | 0));
-	cout << "\n\t1 - Вычисление сочентания" << cursor[1] << "\n\t2 - Вычисление размещения" << cursor[2] << "\n\t3 - Вычисление перестановок" << cursor[3] << "\n\t4 - Вычисление вероятности формулой Бернулли" << cursor[4] << "\n\t";
-	cout << "5 - Вычисление вероятности формулой Пуассона" << cursor[5] << "\n\t6 - ДСВ - числовые характеристики" << cursor[6] << "\n\t7 - Биноминальное распеределине - числовые характеристики" << cursor[7] << "\n\t";
-	cout << "8 - Формула распределения Пуассона - числовые характеристики" << cursor[8] << "\n\t9 - НСВ - числовые характеристики" << cursor[9] << "\n\t10 - НСВ - вероятность попадания в заданный интервал" << cursor[9] << "\n\t";
-	cout << "11 - Показательное распределение" << cursor[11] << "\n\t12 - Равномерное распределение" << cursor[12] << "\n\t13 - Нормальное распределение" << cursor[13] << "\n\t14 - Нахождение приближенного значения интеграла" << cursor[14] << "\n\t";
+	cout << "\n\t1 - Вычисление сочентания" <<  "\n\t2 - Вычисление размещения" <<  "\n\t3 - Вычисление перестановок" << "\n\t4 - Вычисление вероятности формулой Бернулли" << "\n\t";
+	cout << "5 - Вычисление вероятности формулой Пуассона" << "\n\t6 - ДСВ - числовые характеристики" << "\n\t7 - Биноминальное распеределине - числовые характеристики" << "\n\t";
+	cout << "8 - Формула распределения Пуассона - числовые характеристики" << "\n\t9 - НСВ - числовые характеристики" << "\n\t10 - НСВ - вероятность попадания в заданный интервал" << "\n\t";
+	cout << "11 - Показательное распределение" << "\n\t12 - Равномерное распределение" << "\n\t13 - Нормальное распределение" << "\n\t14 - Нахождение приближенного значения интеграла" << "\n\t";
 	SetConsoleTextAttribute(hConsole, (WORD)((15 << 4) | 4));
-	cout << "\t      0 - Выход\n" << cursor[0] << "";
+	cout << "\t      0 - Выход\n" << "";
 	SetConsoleTextAttribute(hConsole, (WORD)((15 << 4) | 0));
 	var = input();
 	data.push_back(var);
@@ -74,21 +73,13 @@ vector<double> menu::start() {
 
 void menu::error_handler(int value)
 {
-	if (value > 10) {
-		cout << errors[value];
-		system("pause");
-		system("cls");
-		input_data(var,data);
-	}
-	else {
-		cout << errors[value] << endl;
-	}
+	cout <<"\nERROR " << value << endl;
 }
 
 string menu::getFunction()
 {
 	string str;
-	cout << "Введите функцию: ";
+	cout << "\nСинус - sin, \nКосинус - cos, \nТангенс - tan, \nКотангенс - ctan, \nАрксинус - asin, \nАрккосинус - acos, \nАртангенс - atan, \nАрккатангенс - actan, \nКвадратный корень - sqrt, \nКубический корень - cbrt, \nМодуль - abs" << endl << "Введите функцию: ";
 	getline(cin, str);
 	return str;
 }
@@ -98,20 +89,20 @@ void menu::answer_output(vector<double> ansver, int value)
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(hConsole, (WORD)((15 << 4) | 0));
 	switch (value) {
-	case 1: cout << "\nКолличество сочетаний: "; cout << ansver[0]; break;
-	case 2: cout << "\nКолличество размещений: "; cout << ansver[0]; break;
-	case 3: cout << "\nКолличество перестановок: "; cout << ansver[0]; break;
-	case 4: cout << "\nВероятность: "; cout << ansver[0]; break;
-	case 5: cout << "\nВероятность: "; cout << ansver[0]; break;
-	case 6: cout << "\nМатематическое ожидание: "; cout << ansver[0]; cout << "\nДисперсия: "; cout << ansver[1]; cout << "\nСреднее квадратическое отклоенение: "; cout << ansver[2]; cout << "\nАссиметрия: " << ansver[3]; cout << "\nЭксцесс: " << ansver[4]; break;
-	case 7: cout << "\nМатематическое ожидание: "; cout << ansver[0]; cout << "\nДисперсия: "; cout << ansver[1]; cout << "\nСреднее квадратическое отклоенение: "; cout << ansver[2]; cout << "\nАссиметрия: " << ansver[3]; cout << "\nЭксцесс: " << ansver[4]; break;
-	case 8: cout << "\nМатематическое ожидание: "; cout << ansver[0]; cout << "\nДисперсия: "; cout << ansver[1]; cout << "\nСреднее квадратическое отклоенение: "; cout << ansver[2]; cout << "\nАссиметрия: " << ansver[3]; cout << "\nЭксцесс: " << ansver[4]; break;
-	case 9: cout << "\nМатематическое ожидание: "; cout << ansver[0]; cout << "\nДисперсия: "; cout << ansver[1]; cout << "\nСреднее квадратическое отклоенение: "; cout << ansver[2]; cout << "\nАссиметрия: " << ansver[3]; cout << "\nЭксцесс: " << ansver[4]; break;
-	case 10: cout << "\nВероятность: "; cout << ansver[0]; break;
-	case 11: cout << "\nМатематическое ожидание: "; cout << ansver[0]; cout << "\nДисперсия: "; cout << ansver[1]; cout << "\nСреднее квадратическое отклоенение: "; cout << ansver[2]; cout << "\nАссиметрия: " << ansver[3]; cout << "\nЭксцесс: " << ansver[4]; break;
-	case 12: cout << "\nМатематическое ожидание: "; cout << ansver[0]; cout << "\nДисперсия: "; cout << ansver[1]; cout << "\nСреднее квадратическое отклоенение: "; cout << ansver[2]; cout << "\nАссиметрия: " << ansver[3]; cout << "\nЭксцесс: " << ansver[4]; break;
-	case 13: cout << "\nМатематическое ожидание: "; cout << ansver[0]; cout << "\nДисперсия: "; cout << ansver[1]; cout << "\nСреднее квадратическое отклоенение: "; cout << ansver[2]; cout << "\nАссиметрия: " << ansver[3]; cout << "\nЭксцесс: " << ansver[4]; break;
-	case 14: cout << "\nРезультат: "; cout << ansver[0]; break;
+	case 1: cout << "\nКолличество сочетаний: "; cout << ansver.at(0); break;
+	case 2: cout << "\nКолличество размещений: "; cout << ansver.at(0); break;
+	case 3: cout << "\nКолличество перестановок: "; cout << ansver.at(0); break;
+	case 4: cout << "\nВероятность: "; cout << ansver.at(0); break;
+	case 5: cout << "\nВероятность: "; cout << ansver.at(0); break;
+	case 6: cout << "\nМатематическое ожидание: "; cout << ansver.at(0); cout << "\nДисперсия: "; cout << ansver.at(1); cout << "\nСреднее квадратическое отклоенение: "; cout << ansver.at(2); cout << "\nАссиметрия: " << ansver.at(3); cout << "\nЭксцесс: " << ansver.at(4); break;
+	case 7: cout << "\nМатематическое ожидание: "; cout << ansver.at(0); cout << "\nДисперсия: "; cout << ansver.at(1); cout << "\nСреднее квадратическое отклоенение: "; cout << ansver.at(2); cout << "\nАссиметрия: " << ansver.at(3); cout << "\nЭксцесс: " << ansver.at(4); break;
+	case 8: cout << "\nМатематическое ожидание: "; cout << ansver.at(0); cout << "\nДисперсия: "; cout << ansver.at(1); cout << "\nСреднее квадратическое отклоенение: "; cout << ansver.at(2); cout << "\nАссиметрия: " << ansver.at(3); cout << "\nЭксцесс: " << ansver.at(4); break;
+	case 9: cout << "\nМатематическое ожидание: "; cout << ansver.at(0); cout << "\nДисперсия: "; cout << ansver.at(1); cout << "\nСреднее квадратическое отклоенение: "; cout << ansver.at(2); cout << "\nАссиметрия: " << ansver.at(3); cout << "\nЭксцесс: " << ansver.at(4); break;
+	case 10: cout << "\nВероятность: "; cout << ansver.at(0); break;
+	case 11: cout << "\nМатематическое ожидание: "; cout << ansver.at(0); cout << "\nДисперсия: "; cout << ansver.at(1); cout << "\nСреднее квадратическое отклоенение: "; cout << ansver.at(2); cout << "\nАссиметрия: " << ansver.at(3); cout << "\nЭксцесс: " << ansver.at(4); break;
+	case 12: cout << "\nМатематическое ожидание: "; cout << ansver.at(0); cout << "\nДисперсия: "; cout << ansver.at(1); cout << "\nСреднее квадратическое отклоенение: "; cout << ansver.at(2); cout << "\nАссиметрия: " << ansver.at(3); cout << "\nЭксцесс: " << ansver.at(4); break;
+	case 13: cout << "\nМатематическое ожидание: "; cout << ansver.at(0); cout << "\nДисперсия: "; cout << ansver.at(1); cout << "\nСреднее квадратическое отклоенение: "; cout << ansver.at(2); cout << "\nАссиметрия: " << ansver.at(3); cout << "\nЭксцесс: " << ansver.at(4); break;
+	case 14: cout << "\nРезультат: "; cout << ansver.at(0); break;
 	}
 	cout << endl;
 	system("pause");
