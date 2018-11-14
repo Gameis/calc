@@ -22,7 +22,7 @@ using namespace std;
 int main()
 {
 
-		menu currentMenu;
+		Menu currentMenu;
 		vector<Func*> functions = vector<Func*>({ new combination() , new accommodation(), new arrangement(), new Bernully(), new Puasson(), new DRV(), new Binom(), new Poisson(), new stub(), new CRV(), new IndicataseDistribution(), new stub(), new NormalDistribution(), new Integral([&currentMenu]() {return currentMenu.getFunction(); }) });
 
 		while (true)
@@ -42,11 +42,11 @@ int main()
 			if (0 <= executionCode && executionCode < 11)
 			{
 				auto answer = functions.at(function_number)->answer();
-				currentMenu.answer_output(answer,++function_number);
+				currentMenu.outputinAnswer(answer,++function_number);
 			}
 			if (0 < executionCode)
 			{
-				currentMenu.error_handler(executionCode);
+				currentMenu.errorHandler(executionCode);
 			}
 			}
 			catch (...)

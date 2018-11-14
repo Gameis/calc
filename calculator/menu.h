@@ -5,24 +5,24 @@
 
 using namespace std;
 
-class menu
+class Menu
 {
 private:
-	vector<double> data;
-	map <int,string> errors;
+	vector<double> Data;
+	map <int, string> Errors = { {1,"n = 0"},{2,"Число испытаний мало для формулы Пуассона"},{3,"Вероятность велика для Пуассона"},{4,"число должно быть целое"},{5,"n > 15"},{11,"Нехватка аргументов"},{12,"Число должно быть больше 0"},{13,"Сумма вероятностей не равна 1"},{14,"m > n"} };
 public:
 	vector<double> start();
 	
-	void begin() { data = start(); } 
+	void begin() { Data = start(); } 
 	//Вывод в консоль начального меню, считывание данных пользователя
 	
-	inline vector<double> result() { return this->data; } 
+	inline vector<double> result() { return this->Data; } 
 	//Возвращает вектор типа double, в которм хранятся данные, считанные с консоли 
 	
-	void set(const map<int,string>& error) { errors = error; }; 
+	void set(const map<int,string>& error) { Errors = error; }; 
 	//Задает вектор строк со списком ошибок
 
-	void error_handler(int value); 
+	void errorHandler(int value); 
 	//Обрабатывает ошибку; 
 	//value - код ошибки
 
@@ -34,7 +34,7 @@ public:
 	/// \param ansver - вектор результата
 	///               value - номер функции
 	/////////////////////////////////////////
-	void answer_output(vector<double> ansver, int value);
+	void outputinAnswer(vector<double> ansver, int value);
 
 };
 

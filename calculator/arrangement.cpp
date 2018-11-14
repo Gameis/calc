@@ -13,17 +13,12 @@ vector<double> arrangement::answer()
 
 unsigned arrangement::compute(const vector<double> & data)
 {
-	vector<double> q;
-	v = q;
+	v.clear();
 	int temp = data[0];
 	if (data[0] != temp) return 4;
-		temp = data[1];
-		if (data[1] != temp) return 4;
-		if (data[0] < 0) return 12;
-	if (data[1] < 0) return 22;
+	if (data[0] < 0) return 12;
 	try {
 		data.at(0);
-		data.at(1);
 	}
 	catch (...) {
 		return 11;
