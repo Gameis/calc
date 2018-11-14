@@ -19,7 +19,7 @@ private:
 	vector<double> _x;
 	void initializeData(vector<double> answer);
 	void computeNumericalCharacteristics();
-	double computeNY(int _i);
+	double computeNY(int i);
 	bool isHappen();
 	bool isAlreadyX();
 public:
