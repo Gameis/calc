@@ -9,7 +9,7 @@ class menu
 {
 private:
 	vector<double> data;
-	map <int,string> errors;
+	map <unsigned,string> errors;
 public:
 	vector<double> start();
 	
@@ -18,11 +18,10 @@ public:
 	
 	inline vector<double> result() { return this->data; } 
 	//Возвращает вектор типа double, в которм хранятся данные, считанные с консоли 
-	
-	void set(const map<int,string>& error) { errors = error; }; 
-	//Задает вектор строк со списком ошибок
 
-	void error_handler(int value); 
+	menu();
+
+	void error_handler(unsigned value); 
 	//Обрабатывает ошибку; 
 	//value - код ошибки
 
