@@ -3,7 +3,7 @@
 #include "iostream"
 #include "func.h"
 using namespace std;
-class accommodation : public func
+class accommodation : public Func
 {
 private:
 	vector<double> v;

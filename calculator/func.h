@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class func
+class Func
 {
 public:
 	virtual vector <double> answer() = 0;

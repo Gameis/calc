@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class arrangement: public func
+class arrangement: public Func
 {
 private:
 	vector<double> v;

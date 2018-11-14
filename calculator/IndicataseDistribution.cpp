@@ -1,5 +1,5 @@
 #include "IndicataseDistribution.h"
-using namespace std;
+
 
 vector<double> IndicataseDistribution::answer()
 {

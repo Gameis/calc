@@ -7,7 +7,7 @@
 #include "func.h"
 using namespace std;
 
-class CRV : public func
+class CRV : public Func
 {
 private:
 vector<double> answer_s;

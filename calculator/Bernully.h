@@ -6,7 +6,7 @@
 #include "vector"
 using namespace std;
 
-class Bernully: public func
+class Bernully: public Func
 {
 private:
 	int n, m;

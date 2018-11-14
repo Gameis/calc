@@ -8,7 +8,7 @@
 
 using namespace std;
 
-class DRV : public func
+class DRV : public Func
 {
 private:
 	map <double, double> drv;

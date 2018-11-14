@@ -23,7 +23,7 @@ int main()
 	try
 	{
 		menu currentMenu;
-		vector<func*> functions = vector<func*>({ new combination() , new accommodation(), new arrangement(), new Bernully(), new Puasson(), new DRV(), new binom(), new poisson(), new stub(), new CRV(), new IndicataseDistribution(), new stub(), new stub(), new Integral([&currentMenu]() {return currentMenu.getFunction(); }) });
+		vector<Func*> functions = vector<Func*>({ new combination() , new accommodation(), new arrangement(), new Bernully(), new Puasson(), new DRV(), new binom(), new poisson(), new stub(), new CRV(), new IndicataseDistribution(), new stub(), new stub(), new Integral([&currentMenu]() {return currentMenu.getFunction(); }) });
 
 		while (true)
 		{

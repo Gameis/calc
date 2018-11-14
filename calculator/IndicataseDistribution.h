@@ -2,7 +2,7 @@
 #include <vector>
 #include "func.h"
 using namespace std;
-class IndicataseDistribution : public func
+class IndicataseDistribution : public Func
 {
 private:
 	vector<double> _answer;

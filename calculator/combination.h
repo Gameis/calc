@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class combination : public func
+class combination : public Func
 {
 private:
 	vector<double> v;

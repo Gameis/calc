@@ -6,7 +6,7 @@
 #include "FunctionParser.h"
 #include "func.h"
 using namespace std;
-class Integral : public func
+class Integral : public Func
 {
 private:
 	vector<double> _answer;

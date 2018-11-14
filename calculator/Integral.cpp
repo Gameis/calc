@@ -8,7 +8,7 @@ double Integral::getValueByX(double x)
 }
 
 
-Integral::Integral(function<string()> callBack) : func()
+Integral::Integral(function<string()> callBack) : Func()
 {
 	getExpression = callBack;
 	_calc = Calculator(vector<string> {"cos", "sin", "tan", "atan", "acos", "asin", "cbrt", "sqrt"});

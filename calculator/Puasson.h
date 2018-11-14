@@ -6,7 +6,7 @@
 #include "func.h"
 using namespace std;
 
-class Puasson : public func
+class Puasson : public Func
 {
 private:
 	int n, m;

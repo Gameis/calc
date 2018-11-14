@@ -3,7 +3,7 @@
 #include "math.h"
 #include "func.h"
 using namespace std;
-class poisson : public func
+class poisson : public Func
 {
 private:
 	vector<double> answers;

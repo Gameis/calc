@@ -1,7 +1,7 @@
 #pragma once
 #include "func.h"
 class stub :
-	public func
+	public Func
 {
 public:
 	virtual vector<double> answer() override;
