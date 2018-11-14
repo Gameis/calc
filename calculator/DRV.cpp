@@ -14,24 +14,24 @@ unsigned DRV::compute(const vector<double> & answer) {
 	}
 }
 void DRV::initializeData(vector<double> answer) {
-	int _i = 0;
-	while (_i < answer.size()) {
-		this->_x.push_back(answer[_i]);
-		_drv.insert(pair<double, double>(answer[_i], answer[_i + 1]));
-		_i += 2;
+	int i = 0;
+	while (i < answer.size()) {
+		this->_x.push_back(answer[i]);
+		_drv.insert(pair<double, double>(answer[i], answer[i + 1]));
+		i += 2;
 	}
 }
 bool DRV::isAlreadyX() {
-	for (int _i = 0; _i < this->_x.size(); _i++) {
-		for (int _it = _i + 1; _it < this->_x.size(); _it++) {
-			if (this->_x[_i] == this->_x[_it]) return true;
+	for (int i = 0; i < this->_x.size(); i++) {
+		for (int it = i + 1; it < this->_x.size(); it++) {
+			if (this->_x[i] == this->_x[it]) return true;
 		}
 	}
 	return false;
 }
 bool DRV::isHappen() {
-	for (auto _it = _drv.begin(); _it != _drv.end(); ++_it) {
-		_sum += (*_it).second;
+	for (auto it = _drv.begin(); it != _drv.end(); ++it) {
+		this->_sum += (*it).second;
 	}
 	if (this->_sum == 1) {
 		return true;
@@ -51,10 +51,10 @@ void DRV::computeNumericalCharacteristics() {
 	this->_answers.push_back(this->_my3 / (pow(this->_theAvarageSquare, 3)));
 	this->_answers.push_back((this->_my4 / (pow(this->_theAvarageSquare, 4))) - 3);
 }
-double DRV::computeNY(int _i) {
-	double _temp = 0;
-	for (auto _it = _drv.begin(); _it != _drv.end(); ++_it) {
-		_temp += pow((*_it).first, _i)*(*_it).second;
+double DRV::computeNY(int i) {
+	double temp = 0;
+	for (auto it = _drv.begin(); it != _drv.end(); ++it) {
+		temp += pow((*it).first, i)*(*it).second;
 	}
-	return _temp;
+	return temp;
 }
