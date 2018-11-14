@@ -18,8 +18,8 @@ unsigned NormalDistribution::compute(const vector<double> & v)
 	D = sigma * sigma;
 	_answer.clear();
 	_answer.push_back(M);
-	_answer.push_back(sigma);
 	_answer.push_back(D);
+	_answer.push_back(sigma);
 	_answer.push_back(A);
 	_answer.push_back(E);
 	return 0;
