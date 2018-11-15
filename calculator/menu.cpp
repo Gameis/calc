@@ -65,16 +65,16 @@ vector<double> Menu::start() {
 	vector<double> data;
 	SetConsoleTextAttribute(hConsole, (WORD)((15 << 4) | 1));
 	cout << "\t\t\tМеню\n";
-	SetConsoleTextAttribute(hConsole, (WORD)((15 << 4) | 0));
+	SetConsoleTextAttribute(hConsole, static_cast<WORD>((15 << 4) | 0));
 	cout << "\n\t1 - Вычисление сочентания" <<  "\n\t2 - Вычисление размещения" <<  "\n\t3 - Вычисление перестановок" << "\n\t4 - Вычисление вероятности формулой Бернулли" << "\n\t";
 	cout << "5 - Вычисление вероятности формулой Пуассона" << "\n\t6 - ДСВ - числовые характеристики" << "\n\t7 - Биноминальное распеределине - числовые характеристики" << "\n\t";
 	cout << "8 - Формула распределения Пуассона - числовые характеристики" << "\n\t9 - НСВ - числовые характеристики" << "\n\t10 - НСВ - вероятность попадания в заданный интервал" << "\n\t";
 	cout << "11 - Показательное распределение" << "\n\t12 - Равномерное распределение" << "\n\t13 - Нормальное распределение" << "\n\t14 - Нахождение приближенного значения интеграла" << "\n\t";
 	cout << "\n\t Найти вероятность попадания в заданный интервал:\n\n";
-	cout << "\t16 - Биномиальное распеределение\n\t17 - Распеределение по Пуассону\n\t18 - Нормальное распеределение\n\t19 - Показательное распеределение\n\t20 - Равномерное распеределение\n\t21 - Правило Трех сигм\n\t22 - шанс нормального токлонения\n";
-	SetConsoleTextAttribute(hConsole, (WORD)((15 << 4) | 4));
+	cout << "\t16 - Биномиальное распеределение\n\t17 - Распеределение по Пуассону\n\t18 - Нормальное распеределение\n\t19 - Показательное распеределение\n\t20 - Равномерное распеределение\n\t21 - Правило Трех сигм\n\t22 - шанс нормального отклонения\n";
+	SetConsoleTextAttribute(hConsole, static_cast<WORD>((15 << 4) | 4));
 	cout << "\t      0 - Выход\n" << "";
-	SetConsoleTextAttribute(hConsole, (WORD)((15 << 4) | 0));
+	SetConsoleTextAttribute(hConsole, static_cast<WORD>((15 << 4) | 0));
 	var = input();
 	data.push_back(var);
 	inputingData(var, data);
@@ -84,9 +84,9 @@ vector<double> Menu::start() {
 void Menu::errorHandler(int value)
 {
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	SetConsoleTextAttribute(hConsole, (WORD)((15 << 4) | 4));
+	SetConsoleTextAttribute(hConsole, static_cast<WORD>((15 << 4) | 4));
 	cout <<"\nERROR \n" << Errors.at(value) << endl;
-	SetConsoleTextAttribute(hConsole, (WORD)((15 << 4) | 0));
+	SetConsoleTextAttribute(hConsole, static_cast<WORD>((15 << 4) | 0));
 	system("pause");
 	system("cls");
 }
@@ -94,7 +94,7 @@ void Menu::errorHandler(int value)
 string Menu::getFunction()
 {
 	string str;
-	cout << "\nСинус - sin, \nКосинус - cos, \nТангенс - tan, \nКотангенс - ctan, \nАрксинус - asin, \nАрккосинус - acos, \nАртангенс - atan, \nАрккатангенс - actan, \nКвадратный корень - sqrt, \nКубический корень - cbrt, \nМодуль - abs" << endl << "Введите функцию: ";
+	cout << "\nВведите подинтегральную функцию\nСинус - sin, \nКосинус - cos, \nТангенс - tan, \nКотангенс - ctan, \nАрксинус - asin, \nАрккосинус - acos, \nАртангенс - atan, \nАрккатангенс - actan, \nКвадратный корень - sqrt, \nКубический корень - cbrt, \nМодуль - abs" << endl << "Введите функцию: ";
 	getline(cin, str);
 	return str;
 }
@@ -102,7 +102,7 @@ string Menu::getFunction()
 void Menu::outputinAnswer(vector<double> ansver, int value)
 {
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	SetConsoleTextAttribute(hConsole, (WORD)((15 << 4) | 4));
+	SetConsoleTextAttribute(hConsole, static_cast<WORD>((15 << 4) | 4));
 	switch (value) {
 	case 1: cout << "\nКолличество сочетаний: "; cout << ansver.at(0); break;
 	case 2: cout << "\nКолличество размещений: "; cout << ansver.at(0); break;
