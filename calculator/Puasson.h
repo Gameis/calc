@@ -41,6 +41,10 @@ public:
 		_n = vect[0];
 		if (_n < 100)
 		{
+			_m = vect[1];
+			_p = vect[2];
+			_lambda = _n*_p;
+			_v.push_back((pow(_lambda, _m) * exp(-_lambda)) / computeFactorial(_m));
 			return 7;// если n меньше 100
 		}
 		if (_n < 0)
