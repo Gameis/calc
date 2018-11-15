@@ -143,11 +143,13 @@
     <ClInclude Include="binomialDistribution.h" />
     <ClInclude Include="Calculator.h" />
     <ClInclude Include="ChanceOfDeviation.h" />
+    <ClInclude Include="ChanceOfInRangeOfNormalDistribution.h" />
     <ClInclude Include="combination.h" />
     <ClInclude Include="DRV.h" />
     <ClInclude Include="func.h" />
     <ClInclude Include="FunctionParser.h" />
     <ClInclude Include="Integral.h" />
+    <ClInclude Include="IntervalPoisson.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="IndicataseDistribution.h" />
     <ClInclude Include="NormalDistribution.h" />
