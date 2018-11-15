@@ -20,7 +20,6 @@ private:
 	void initializeData(vector<double> answer);
 	void computeNumericalCharacteristics();
 	double computeNY(int i);
-	bool isHappen();
 	bool isAlreadyX();
 public:
 	vector<double> answer() { return this->_answers; }

@@ -2,15 +2,15 @@
 
 unsigned DRV::compute(const vector<double> & answer) {
 	this->initializeData(answer);
-	if (this->isHappen() == true && this->isAlreadyX() == false) {
-		if (answer.size() < 4) return 11; // Кол-во X-ов должно быть >= "2"
+	if (answer.size() < 4) return 11; // Кол-во X-ов должно быть >= "2"
+	else if (this->_sum != 1) return 13; // Вероятность < или > "1", должна быть = "1"
+	else if (this->isAlreadyX() != false) {
 		this->computeNumericalCharacteristics();
-		return 0;
+		return 10; // В распределение ДСВ присутствуют одинаковые Х-ы
 	}
 	else {
-		if (this->isHappen() != true) return 13; // Вероятность < или > "1", должна быть = "1"
-		else if (this->isAlreadyX() != false) return 10; // В распределение ДСВ присутствуют одинаковые Х-ы
-		else if (answer.size() < 4) return 11; // Кол-во X-ов должно быть >= "2"
+		this->computeNumericalCharacteristics();
+		return 0;
 	}
 }
 void DRV::initializeData(vector<double> answer) {
@@ -18,6 +18,7 @@ void DRV::initializeData(vector<double> answer) {
 	while (i < answer.size()) {
 		this->_x.push_back(answer[i]);
 		_drv.insert(pair<double, double>(answer[i], answer[i + 1]));
+		this->_sum += answer[i + 1];
 		i += 2;
 	}
 }
@@ -28,17 +29,6 @@ bool DRV::isAlreadyX() {
 		}
 	}
 	return false;
-}
-bool DRV::isHappen() {
-	for (auto it = _drv.begin(); it != _drv.end(); ++it) {
-		this->_sum += (*it).second;
-	}
-	if (this->_sum == 1) {
-		return true;
-	}
-	else {
-		return false;
-	}
 }
 void DRV::computeNumericalCharacteristics() {
 	this->_answers.clear();

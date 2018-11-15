@@ -18,8 +18,8 @@ unsigned Binom::compute(const vector<double> & v) {
 		return 1; //n равно 0
 	else if (n > 15)
 		return 5; // n не должно превышать 15 в формуле Бернулли
-	else if (p <= 0 || p >= 1 || q <= 0 || q >= 1)
-		return 10; // одна из вероятностей меньше/равна 0 или больше/равна 1
+	else if (p < 0 || p > 1 || q < 0 || q > 1)
+		return 17; // одна из вероятностей меньше 0 или больше 1
 	else if (n < 0)
 		return 12; //число событий должно быть больше 0
 	try
