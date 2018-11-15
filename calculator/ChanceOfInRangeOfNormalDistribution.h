@@ -30,7 +30,7 @@ public:
 		}
 		catch (...)
 		{
-			return 10; //недостаточно аргументов 
+			return 11; //недостаточно аргументов 
 		}
 		double a = data[0];
 		double sigma = data[1];
