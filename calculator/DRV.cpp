@@ -2,8 +2,9 @@
 
 unsigned DRV::compute(const vector<double> & answer) {
 	this->initializeData(answer);
-	if (answer.size() < 4) return 11; // Кол-во X-ов должно быть >= "2"
-	else if (this->_sum != 1) return 13; // Вероятность < или > "1", должна быть = "1"
+	float sum = this->_sum;
+	if (answer.size() < 2) return 11; // Кол-во X-ов должно быть >= "2"
+	else if (sum != 1) return 13; // Вероятность < или > "1", должна быть = "1"
 	else if (this->isAlreadyX() != false) {
 		this->computeNumericalCharacteristics();
 		return 10; // В распределение ДСВ присутствуют одинаковые Х-ы

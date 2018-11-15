@@ -2,14 +2,14 @@
 
 unsigned CRV::compute(const vector<double>& answers)
 {
-	_a1 = answers[1];
-	_b1 = answers[2];
-	_a = answers[3];
-	_b = answers[4];
-	_x = answers[5];
+	_a1 = answers[0];
+	_b1 = answers[1];
+	_a = answers[2];
+	_b = answers[3];
+	_x = answers[4];
 	if (_b1 < _a1)
 	{
-		return 10;	//левая граница не может быть больше правой и быть меньше 0
+		return 15;	//левая граница не может быть больше правой
 	}
 	else if (_a < _a1)
 	{
