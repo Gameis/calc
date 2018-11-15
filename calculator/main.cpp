@@ -59,7 +59,7 @@ int main()
 			}
 			catch (...)
 			{
-
+				currentMenu.errorOutput(228);
 			}
 		}
 			
