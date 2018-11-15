@@ -3,11 +3,12 @@
 
 #include <iostream>
 #include <string>
+#include "func.h"
 #include <vector>
 
 using namespace std;
 
-class rulesThreeSigm
+class rulesThreeSigm : public Func
 {
 private:
 	double _a, _sigma, _leftBorder, _rightBorder;

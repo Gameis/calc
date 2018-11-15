@@ -45,14 +45,14 @@ void inputingData(int var, vector<double>& data) {
 	case 11: cout << "Левая граница интервала: "; data.push_back(input());  cout << "Правая граница интервала: "; data.push_back(input());
 	case 12: cout << "Это не конечная версия продукта, поэтому данный функционал отсутствует, следите за обновлениями с:";
 	case 13: cout << "a: "; data.push_back(input()); cout << "Ъ: "; data.push_back(input()); break;
-	case 14: cout << "Начало интервала: "; data.push_back(input()); cout << "Конец интервала: "; data.push_back(input());  cout << "Точность: "; data.push_back(input()); cout << "Эпсилон: "; data.push_back(input());
+	case 14: cout << "Начало интервала: "; data.push_back(input()); cout << "Конец интервала: "; data.push_back(input());  cout << "Количество точек: "; data.push_back(input()); cout << "Точность: "; data.push_back(input());
 	case 15: cout << "n: "; data.push_back(input()); cout << "p: "; data.push_back(input()); cout << "m: "; data.push_back(input()); cout << "Левая граница интервала: "; data.push_back(input());  cout << "Правая граница интервала: "; data.push_back(input()); break;
 	case 16: cout << "n: "; data.push_back(input()); cout << "p: "; data.push_back(input()); cout << "Левая граница интервала: "; data.push_back(input());  cout << "Правая граница интервала: ";
 	case 17: cout << "a: "; data.push_back(input()); cout << "Сигма:"; data.push_back(input()); cout << "Левая граница интервала: "; data.push_back(input());  cout << "Правая граница интервала: "; data.push_back(input()); break;
 	case 18: cout << "Левая граница интервала: "; data.push_back(input());  cout << "Правая граница интервала: "; data.push_back(input()); cout << "Лямбда: "; data.push_back(input());
 	case 19: cout << "Это не конечная версия продукта, поэтому данный функционал отсутствует, следите за обновлениями с:";
-	case 20: cout << "Эпсилон А:"; data.push_back(input()); cout << "Сигма:"; data.push_back(input()); break;
-	case 21: cout << "Эпсилон А:"; data.push_back(input()); cout << "Сигма:"; data.push_back(input()); break;
+	case 20: cout << "Эпсилон :"; data.push_back(input()); cout << "Сигма:"; data.push_back(input()); break;
+	case 21: cout << "Эпсилон :"; data.push_back(input()); cout << "Сигма:"; data.push_back(input()); break;
 	default: cout << "повторите ввод\n";
 	}
 }
@@ -71,7 +71,7 @@ vector<double> Menu::start() {
 	cout << "8 - Формула распределения Пуассона - числовые характеристики" << "\n\t9 - НСВ - числовые характеристики" << "\n\t10 - НСВ - вероятность попадания в заданный интервал" << "\n\t";
 	cout << "11 - Показательное распределение" << "\n\t12 - Равномерное распределение" << "\n\t13 - Нормальное распределение" << "\n\t14 - Нахождение приближенного значения интеграла" << "\n\t";
 	cout << "\n\t Найти вероятность попадания в заданный интервал:\n\n";
-	cout << "\t16 - Биномиальное распеределение\n\t17 - Распеределение по Пуассону\n\t18 - Нормальное распеределение\n\t19 - Показательное распеределение\n\t20 - Равномерное распеределение\n\t21 - Правило Трех сигм\n\t22 - шанс нормального токлонения\n";
+	cout << "\t15 - Биномиальное распеределение\n\t16 - Распеределение по Пуассону\n\t17 - Нормальное распеределение\n\t18 - Показательное распеределение\n\t19 - Равномерное распеределение\n\t20 - Правило Трех сигм\n\t21 - шанс нормального отклонения\n";
 	SetConsoleTextAttribute(hConsole, (WORD)((15 << 4) | 4));
 	cout << "\t      0 - Выход\n" << "";
 	SetConsoleTextAttribute(hConsole, (WORD)((15 << 4) | 0));
@@ -123,9 +123,8 @@ void Menu::outputinAnswer(vector<double> ansver, int value)
 	case 17: cout << "\nВероятность: "; cout << ansver.at(0); break;
 	case 18: cout << "\nВероятность: "; cout << ansver.at(0); break;
 	case 19: cout << "\nВероятность: "; cout << ansver.at(0); break;
-	case 20: cout << "\nВероятность: "; cout << ansver.at(0); break;
+	case 20: cout << "\nЛевая граница "; cout << ansver.at(0); cout << "\nЛевая граница "; cout << ansver.at(1); break;
 	case 21: cout << "\nВероятность: "; cout << ansver.at(0); break;
-	case 22: cout << "\nВероятность: "; cout << ansver.at(0); break;
 	SetConsoleTextAttribute(hConsole, (WORD)((15 << 4) | 0));
 	}
 	cout << endl;

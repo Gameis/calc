@@ -129,6 +129,7 @@
     <ClCompile Include="IndicataseDistribution.cpp" />
     <ClCompile Include="NormalDistribution.cpp" />
     <ClCompile Include="ProbabilityIndicataseDistribution.cpp" />
+    <ClCompile Include="rulesThreeSigm.cpp" />
     <ClCompile Include="RV.cpp" />
     <ClCompile Include="StringTokenizer.cpp" />
     <ClCompile Include="stub.cpp" />
@@ -138,6 +139,7 @@
     <ClInclude Include="arrangement.h" />
     <ClInclude Include="Bernully.h" />
     <ClInclude Include="binom.h" />
+    <ClInclude Include="binomialDistribution.h" />
     <ClInclude Include="Calculator.h" />
     <ClInclude Include="ChanceOfDeviation.h" />
     <ClInclude Include="combination.h" />
@@ -151,6 +153,7 @@
     <ClInclude Include="Poisson.h" />
     <ClInclude Include="ProbabilityIndicataseDistribution.h" />
     <ClInclude Include="Puasson.h" />
+    <ClInclude Include="rulesThreeSigm.h" />
     <ClInclude Include="RV.h" />
     <ClInclude Include="StringTokenizer.h" />
     <ClInclude Include="stub.h" />

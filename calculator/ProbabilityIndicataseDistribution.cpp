@@ -3,30 +3,40 @@
 
 
 
-vector<double> IndicataseDistribution::answer()
+vector<double> ProbabilityIndicataseDistribution::answer()
 {
 	return _answer;
 }
 
 
-unsigned IndicataseDistribution::compute(const vector<double> & v)
+unsigned  ProbabilityIndicataseDistribution::compute(const vector<double> & vec)
 {
-	double x = v.at(0), l = v.at(1);
-	double d, b, m, A = 2, E = 6;
-	if (v.size() > 2)
+	double l = vec.at(0), alfa = vec.at(1), beta = vec.at(2);
+	double f,t,F2, F1, p,ex=2.71828182845904;
+
+	if (alfa > beta) {
+		return 19;
+	}
+	if (alfa = beta) {
+		return 19;
+	}
+	
+	if (vec.size() > 3)
 	{
 		return 11;
 	}
-	m = 1 / l;
-	d = 1 / pow(l, 2);//дисперсия
-	b = 1 / l;//нахождение поварешки
+	t = (-1) *l*alfa;
+	f= (-1) *l*beta;
+
+	
+	F1 = 1 - pow(ex, t);
+	F2 = 1 - pow(ex, f);
+	p = F2 - F1;
+
 
 	_answer.clear();
-	_answer.push_back(d);
-	_answer.push_back(d);
-	_answer.push_back(b);
-	_answer.push_back(l);
-	_answer.push_back(A);
-	_answer.push_back(E);
+
+	_answer.push_back(p);
+	
 	return 0;
 }
