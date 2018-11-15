@@ -37,16 +37,21 @@ public:
 		}
 		catch (...)
 		{
-			return 10; //недостаточно аргументов 
+			return 11; //недостаточно аргументов 
 		}
 		_n = vect[0];
-		if (_n > 15 || _n<=0)
-			return 11; //n не может быть больше 15 и меньше или равным 0
+		if (_n > 15)
+			return 5; //n>15
+		if (_n < 0)
+			return 20; //n<0
 		_m = vect[1];
-		if (_m > _n || _m < 0)
-			return 12; //m не может быть больше n И меньше 0
+		if (_m > _n)
+			return 14; //m не может быть больше n
+		if (_m < 0)
+			return 18; //m не может быть меньше 0
 		_p = vect[2];
-		if (_p > 1 || _p < 0) return 13; //p не может быть больше 1 и меньше 0
+		if (_p > 1 || _p < 0)
+			return 17; //p не может быть больше 1 и меньше 0
 		_q = 1 - _p;
 		_result.push_back(computeFactorial(_n) / (computeFactorial(_m)*computeFactorial(_n - _m))*pow(_p, _m)*pow(_q, _n - _m));
 		return 0;
