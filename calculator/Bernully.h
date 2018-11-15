@@ -40,8 +40,6 @@ public:
 			return 11; //недостаточно аргументов 
 		}
 		_n = vect[0];
-		if (_n > 15)
-			return 5; //n>15
 		if (_n < 0)
 			return 20; //n<0
 		_m = vect[1];
@@ -54,6 +52,8 @@ public:
 			return 17; //p не может быть больше 1 и меньше 0
 		_q = 1 - _p;
 		_result.push_back(computeFactorial(_n) / (computeFactorial(_m)*computeFactorial(_n - _m))*pow(_p, _m)*pow(_q, _n - _m));
+		if (_n > 15)
+			return 5; //n>15
 		return 0;
 	}
 };

@@ -45,10 +45,6 @@ public:
 			return 11; //недостаточно аргументов 
 		}
 		int n = vect[0];
-		if (n > 15)
-			return 5; //n не может быть больше 15
-		if (n == 0)
-			return 1; //n равно 0
 		if (n < 0)
 			return 12; // n должно быть больше 0
 		double p = vect[1];
@@ -69,8 +65,14 @@ public:
 		if (rb > n)
 			return 16; //правая граница не может быть больше n
 		for (int i = lb; i <= rb; i++)
+		{
 			_result.reserve(1);
-			_result[0]+=computeFactorial(n) / (computeFactorial(m)*computeFactorial(n - m))*pow(p, m)*pow(q, n - m);
+			_result[0] += computeFactorial(n) / (computeFactorial(m)*computeFactorial(n - m))*pow(p, m)*pow(q, n - m);
+		}
+		if (n == 0)
+			return 1; //n равно 0
+		if (n > 15)
+			return 5; //n не может быть больше 15
 		return 0;
 	}
 };
