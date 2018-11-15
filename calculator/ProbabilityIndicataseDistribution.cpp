@@ -11,13 +11,10 @@ vector<double> ProbabilityIndicataseDistribution::answer()
 
 unsigned  ProbabilityIndicataseDistribution::compute(const vector<double> & vec)
 {
-	double l = vec.at(0), alfa = vec.at(1), beta = vec.at(2);
+	double l = vec.at(2), alfa = vec.at(0), beta = vec.at(1);
 	double f,t,F2, F1, p,ex=2.71828182845904;
 
-	if (alfa > beta) {
-		return 19;
-	}
-	if (alfa = beta) {
+	if (alfa >= beta) {
 		return 19;
 	}
 	
@@ -25,6 +22,7 @@ unsigned  ProbabilityIndicataseDistribution::compute(const vector<double> & vec)
 	{
 		return 11;
 	}
+
 	t = (-1) *l*alfa;
 	f= (-1) *l*beta;
 

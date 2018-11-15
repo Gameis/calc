@@ -10,6 +10,6 @@ private:
 	vector<double> _answer;
 public:
 	vector<double> answer();
-	unsigned compute(const vector<double> & v);
+	unsigned compute(const vector<double> & vec);
 
 };
