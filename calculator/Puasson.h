@@ -43,6 +43,10 @@ public:
 		{
 			return 7;// если n меньше 100
 		}
+		if (_n < 0)
+		{
+			return 20;// если n меньше 100
+		}
 		_m = vect[1];
 		if (_m > _n)
 		{
@@ -58,6 +62,11 @@ public:
 			return 17;//если больше 1 или р меньше 0
 		}
 		_lambda = _n*_p;
+		if (_lambda >= 10)
+		{
+			_v.push_back((pow(_lambda, _m) * exp(-_lambda)) / computeFactorial(_m));
+			return 8;
+		}
 		_v.push_back((pow(_lambda, _m) * exp(-_lambda)) / computeFactorial(_m));
 		return 0;
 	}
