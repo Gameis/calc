@@ -36,27 +36,31 @@ public:
 		}
 		catch (...)
 		{
-			return 10; //недостаточно аргументов 
+			return 11; //недостаточно аргументов 
 		}
 		_n = vect[0];
 		if (_n < 100)
 		{
-			return 10;// если n меньше 100
+			return 7;// если n меньше 100
 		}
 		_m = vect[1];
-		if (_m > _n || _m < 0)
+		if (_m > _n)
 		{
-			return 11;//если m больше n или m меньше 0
+			return 14;//если m больше n
+		}
+		if (_m < 0)
+		{
+			return 18;//если m больше n или m меньше 0
 		}
 		_p = vect[2];
 		if (_p > 1 || _p < 0)
 		{
-			return 12;//если больше 1 или р меньше 0
+			return 17;//если больше 1 или р меньше 0
 		}
 		_lambda = _n*_p;
 		if (_lambda >= 10)
 		{
-			return 13;// если лямбда больше или равна 10
+			return 8;// если лямбда больше или равна 10
 		}
 		_v.push_back((pow(_lambda, _m) * exp(-_lambda)) / computeFactorial(_m));
 		return 0;
