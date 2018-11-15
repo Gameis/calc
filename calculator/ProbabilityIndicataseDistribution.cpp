@@ -18,6 +18,7 @@ unsigned  ProbabilityIndicataseDistribution::compute(const vector<double> & vec)
 		return 19;
 	}
 	
+	
 	if (vec.size() > 3)
 	{
 		return 11;
@@ -26,9 +27,16 @@ unsigned  ProbabilityIndicataseDistribution::compute(const vector<double> & vec)
 	t = (-1) *l*alfa;
 	f= (-1) *l*beta;
 
-	
-	F1 = 1 - pow(ex, t);
-	F2 = 1 - pow(ex, f);
+	if (alfa >= 0)
+	{
+		F1 = 1 - pow(ex, t);
+	}
+	else { F1 = 0; }
+	if (beta >= 0)
+	{
+		F2 = 1 - pow(ex, f);
+	}
+	else { F2 = 0; }
 	p = F2 - F1;
 
 
