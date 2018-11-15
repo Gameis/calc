@@ -50,7 +50,7 @@ public:
 		}
 		if (_m < 0)
 		{
-			return 18;//если m больше n или m меньше 0
+			return 18;//m меньше 0
 		}
 		_p = vect[2];
 		if (_p > 1 || _p < 0)
@@ -58,10 +58,6 @@ public:
 			return 17;//если больше 1 или р меньше 0
 		}
 		_lambda = _n*_p;
-		if (_lambda >= 10)
-		{
-			return 8;// если лямбда больше или равна 10
-		}
 		_v.push_back((pow(_lambda, _m) * exp(-_lambda)) / computeFactorial(_m));
 		return 0;
 	}
