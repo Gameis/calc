@@ -15,6 +15,8 @@
 #include "FunctionParser.h"
 #include "Integral.h"
 #include "NormalDistribution.h"
+#include "ChanceOfDeviation.h"
+#include "ProbabilityIndicataseDistribution.h"
 
 using namespace std;
 
@@ -23,7 +25,7 @@ int main()
 {
 
 		Menu currentMenu;
-		vector<Func*> functions = vector<Func*>({ new combination() , new accommodation(), new arrangement(), new Bernully(), new Puasson(), new DRV(), new Binom(), new Poisson(), new stub(), new CRV(), new IndicataseDistribution(), new stub(), new NormalDistribution(), new Integral([&currentMenu]() {return currentMenu.getFunction(); }) });
+		vector<Func*> functions = vector<Func*>({ new combination() , new accommodation(), new arrangement(), new Bernully(), new Puasson(), new DRV(), new Binom(), new Poisson(), new stub(), new CRV(), new IndicataseDistribution(), new stub(), new NormalDistribution(), new Integral([&currentMenu]() {return currentMenu.getFunction(); })  });
 
 		while (true)
 		{

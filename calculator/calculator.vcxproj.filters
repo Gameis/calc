@@ -63,6 +63,9 @@
     <ClCompile Include="ChanceOfDeviation.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="ProbabilityIndicataseDistribution.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DRV.h">
@@ -120,6 +123,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="ChanceOfDeviation.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="ProbabilityIndicataseDistribution.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
