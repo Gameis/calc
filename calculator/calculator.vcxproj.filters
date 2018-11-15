@@ -131,6 +131,9 @@
     <ClInclude Include="ChanceOfDeviation.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="ChanceOfInRangeOfNormalDistribution.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
     <ClInclude Include="ProbabilityIndicataseDistribution.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
