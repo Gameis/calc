@@ -12,6 +12,7 @@ using namespace std;
 class NSVNC : public Func
 {
 private:
+
 	vector<double> _answers;
 	double _n, _p, _q, _Mx, _Dx, _sigma, _A, _E;
 public:

@@ -149,6 +149,7 @@
     <ClInclude Include="func.h" />
     <ClInclude Include="FunctionParser.h" />
     <ClInclude Include="Integral.h" />
+    <ClInclude Include="IntervalPoisson.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="IndicataseDistribution.h" />
     <ClInclude Include="NormalDistribution.h" />

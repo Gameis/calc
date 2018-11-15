@@ -130,4 +130,4 @@ void Menu::outputinAnswer(vector<double> ansver, int value)
 	cout << endl;
 	system("pause");
 	system("cls");
-}
+} 

@@ -2,8 +2,8 @@
 
 #include <iostream>
 #include "math.h"
-#include "func.h"
 #include <vector>
+#include "func.h"
 using namespace std;
 
 /*
@@ -39,10 +39,6 @@ public:
 			vect.at(2);//m
 			vect.at(3);//lb
 			vect.at(4);//rb ПРАВАЯ ГРАНИЦА ВКЛЮЧИТЕЛЬНА ПО УМОЛЧАНИЮ
-			/*
-			TODO:
-			сделать уведомления для пользователя, что если он хочет считать не включительно, пусть вводит на единицу меньше
-			*/
 		}
 		catch (...)
 		{
@@ -73,7 +69,8 @@ public:
 		if (rb > n)
 			return 16; //правая граница не может быть больше n
 		for (int i = lb; i <= rb; i++)
-			_result[0] += (computeFactorial(n) / (computeFactorial(m)*computeFactorial(n - m))*pow(p, m)*pow(q, n - m));
+			_result.reserve(1);
+			_result[0]+=computeFactorial(n) / (computeFactorial(m)*computeFactorial(n - m))*pow(p, m)*pow(q, n - m);
 		return 0;
 	}
 };

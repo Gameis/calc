@@ -7,7 +7,18 @@ vector<double> Binom::answer() {
 }
 
 unsigned Binom::compute(const vector<double> & v) {
+	_data.clear();
 	double m, D, dev, A, E;
+	try
+	{
+		v.at(0);
+		v.at(1);
+		v.at(2);
+	}
+	catch (...)
+	{
+		return 11;//недостаточно аргументов
+	}
 	int n = v[0];
 	double p = v[1], q = v[2];
 	if (p + q == 1)
@@ -22,22 +33,17 @@ unsigned Binom::compute(const vector<double> & v) {
 		return 17; // одна из вероятностей меньше 0 или больше 1
 	else if (n < 0)
 		return 12; //число событий должно быть больше 0
-	try
-	{
-		v.at(0);
-		v.at(1);
-		v.at(2);
-	}
-	catch (...)
-	{
-		return 11;//недостаточно аргументов
-	}
+	
 	m = n*p;
 	D = n*p*q;
 	dev = sqrt(D);
 	A = (q - p) / sqrt(n*p*q);
 	E = (1 - 6 * p*q) / n*p*q;
-	vector<double> _data = vector<double>{ m,D,dev,A,E };
+	_data.push_back(m);
+	_data.push_back(D);
+	_data.push_back(dev);
+	_data.push_back(A);
+	_data.push_back(E);
 	
 	
 	return 0;//Которого тут вообще не было...
