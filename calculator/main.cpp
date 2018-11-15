@@ -51,7 +51,7 @@ int main()
 			}
 			if (0 < executionCode)
 			{
-				currentMenu.errorHandler(executionCode);
+				currentMenu.errorOutput(executionCode);
 			}
 			}
 			catch (...)
