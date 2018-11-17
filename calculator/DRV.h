@@ -14,7 +14,8 @@ class DRV : public Func
 {
 private:
 	map <double, double> _drv;
-	double _sum = 0, _my3 = 0, _my4 = 0, _theAvarageSquare = 0;
+	double _my3 = 0, _my4 = 0, _theAvarageSquare = 0;
+	float _sum = 0;
 	vector<double> _answers;
 	vector<double> _x;
 	void initializeData(vector<double> answer);
