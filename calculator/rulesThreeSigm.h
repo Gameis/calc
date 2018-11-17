@@ -18,5 +18,5 @@ public:
 	vector<double> answer() { return this->_answers; }
 	unsigned compute(const vector<double> & answer);
 };
-#endif RULESTHREESIGM_H
+#endif //RULESTHREESIGM_H
 

@@ -21,9 +21,8 @@ unsigned Binom::compute(const vector<double> & v) {
 	}
 	int n = v[0];
 	double p = v[1], q = v[2];
-	if (p + q == 1)
-		return 0;
-	else if (p + q != 1)
+	
+	if (p + q != 1)
 		return 13; //сумма вероятностей не равна 1
 	else if (n == 0)
 		return 1; //n равно 0
