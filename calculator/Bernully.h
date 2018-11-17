@@ -56,4 +56,5 @@ public:
 			return 5; //n>15
 		return 0;
 	}
+	
 };

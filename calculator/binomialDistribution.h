@@ -64,11 +64,12 @@ public:
 			return 15; //левая граница не может быть правее правой
 		if (rb > n)
 			return 16; //правая граница не может быть больше n
+		double temp = 0;
 		for (int i = lb; i <= rb; i++)
 		{
-			_result.reserve(1);
-			_result[0] += computeFactorial(n) / (computeFactorial(m)*computeFactorial(n - m))*pow(p, m)*pow(q, n - m);
+			temp += computeFactorial(n) / (computeFactorial(m)*computeFactorial(n - m))*pow(p, m)*pow(q, n - m);
 		}
+		_result.push_back(temp);
 		if (n == 0)
 			return 1; //n равно 0
 		if (n > 15)

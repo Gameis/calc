@@ -47,7 +47,7 @@ void inputingData(int var, vector<double>& data) {
 	case 13: cout << "a: "; data.push_back(input()); cout << "Ъ: "; data.push_back(input()); break;
 	case 14: cout << "Начало интервала: "; data.push_back(input()); cout << "Конец интервала: "; data.push_back(input());  cout << "Количество точек: "; data.push_back(input()); cout << "Точность: "; data.push_back(input()); break;
 	case 15: cout << "n: "; data.push_back(input()); cout << "p: "; data.push_back(input()); cout << "m: "; data.push_back(input()); cout << "Левая граница интервала: "; data.push_back(input());  cout << "Правая граница интервала: "; data.push_back(input()); break;
-	case 16: cout << "n: "; data.push_back(input()); cout << "p: "; data.push_back(input()); cout << "Левая граница интервала: "; data.push_back(input());  cout << "Правая граница интервала: "; break;
+	case 16: cout << "n: "; data.push_back(input()); cout << "p: "; data.push_back(input()); cout << "Левая граница интервала: "; data.push_back(input());  cout << "Правая граница интервала: "; data.push_back(input());  break;
 	case 17: cout << "a: "; data.push_back(input()); cout << "Сигма:"; data.push_back(input()); cout << "Левая граница интервала: "; data.push_back(input());  cout << "Правая граница интервала: "; data.push_back(input()); break;
 	case 18: cout << "Левая граница интервала: "; data.push_back(input());  cout << "Правая граница интервала: "; data.push_back(input()); cout << "Лямбда: "; data.push_back(input()); break;
 	case 19: cout << "Это не конечная версия продукта, поэтому данный функционал отсутствует, следите за обновлениями с:"; break;
@@ -66,7 +66,7 @@ vector<double> Menu::start() {
 	SetConsoleTextAttribute(hConsole, (WORD)((15 << 4) | 1));
 	cout << "\t\t\tМеню\n";
 	SetConsoleTextAttribute(hConsole, (WORD)((15 << 4) | 0));
-	cout << "\n\t1 - Вычисление сочентания" <<  "\n\t2 - Вычисление размещения" <<  "\n\t3 - Вычисление перестановок" << "\n\t4 - Вычисление вероятности формулой Бернулли" << "\n\t";
+	cout << "\n\t1 - Вычисление сочетания" <<  "\n\t2 - Вычисление размещения" <<  "\n\t3 - Вычисление перестановок" << "\n\t4 - Вычисление вероятности формулой Бернулли" << "\n\t";
 	cout << "5 - Вычисление вероятности формулой Пуассона" << "\n\t6 - ДСВ - числовые характеристики" << "\n\t7 - Биноминальное распеределине - числовые характеристики" << "\n\t";
 	cout << "8 - Формула распределения Пуассона - числовые характеристики" << "\n\t9 - НСВ - числовые характеристики" << "\n\t10 - НСВ - вероятность попадания в заданный интервал" << "\n\t";
 	cout << "11 - Показательное распределение" << "\n\t12 - Равномерное распределение" << "\n\t13 - Нормальное распределение" << "\n\t14 - Нахождение приближенного значения интеграла" << "\n\t";
